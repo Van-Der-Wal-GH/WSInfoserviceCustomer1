@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:tns="http://infoservice.webservice.as24.com/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" name="infoservice" targetNamespace="http://infoservice.webservice.as24.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://infoservice.webservice.as24.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getInvoicingTransactions" type="tns:getInvoicingTransactions" />
+      <xs:element name="getInvoicingTransactionsResponse" type="tns:getInvoicingTransactionsResponse" />
+      <xs:element name="getNewTransactions" type="tns:getNewTransactions" />
+      <xs:element name="getNewTransactionsResponse" type="tns:getNewTransactionsResponse" />
+      <xs:element name="getPendingTransactions" type="tns:getPendingTransactions" />
+      <xs:element name="getPendingTransactionsResponse" type="tns:getPendingTransactionsResponse" />
+      <xs:complexType name="getInvoicingTransactions">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getInvoicingTransactionsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:transaction" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="transaction">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="offerType" type="xs:string" />
+          <xs:element minOccurs="0" name="providerCode" type="xs:string" />
+          <xs:element minOccurs="0" name="transactionNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="documentNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="documentDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="documentMaturityDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="clientId" type="xs:string" />
+          <xs:element minOccurs="0" name="VCNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="VCDuplicateNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="VCType" type="xs:string" />
+          <xs:element minOccurs="0" name="VCRegistrationNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="VCVehicleType" type="xs:string" />
+          <xs:element minOccurs="0" name="VCDriverName" type="xs:string" />
+          <xs:element minOccurs="0" name="VCCMV" type="xs:string" />
+          <xs:element minOccurs="0" name="VCExpiryDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DCNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="DCDuplicateNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="DCType" type="xs:string" />
+          <xs:element minOccurs="0" name="DCRegistrationNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="DCVehicleType" type="xs:string" />
+          <xs:element minOccurs="0" name="DCDriverName" type="xs:string" />
+          <xs:element minOccurs="0" name="DCCMV" type="xs:string" />
+          <xs:element minOccurs="0" name="DCExpiryDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="referenceTak" type="xs:string" />
+          <xs:element minOccurs="0" name="equipmentCode" type="xs:string" />
+          <xs:element minOccurs="0" name="equipmentProviderCode" type="xs:string" />
+          <xs:element minOccurs="0" name="entryPartnerCode" type="xs:string" />
+          <xs:element minOccurs="0" name="entryISOCode" type="xs:string" />
+          <xs:element minOccurs="0" name="entryIdNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="entryMotorwayCode" type="xs:string" />
+          <xs:element minOccurs="0" name="CIM" type="xs:string" />
+          <xs:element minOccurs="0" name="entryPlaceName" type="xs:string" />
+          <xs:element minOccurs="0" name="entryCurrencyCode" type="xs:string" />
+          <xs:element minOccurs="0" name="entryPlacePostalCode" type="xs:string" />
+          <xs:element minOccurs="0" name="entryRegionCode" type="xs:string" />
+          <xs:element minOccurs="0" name="entryTransactionDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="exitPartnerCode" type="xs:string" />
+          <xs:element minOccurs="0" name="exitISOCode" type="xs:string" />
+          <xs:element minOccurs="0" name="exitIdNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="exitMotorwayCode" type="xs:string" />
+          <xs:element minOccurs="0" name="exitPlaceName" type="xs:string" />
+          <xs:element minOccurs="0" name="exitCurrencyCode" type="xs:string" />
+          <xs:element minOccurs="0" name="exitPlacePostalCode" type="xs:string" />
+          <xs:element minOccurs="0" name="exitRegionCode" type="xs:string" />
+          <xs:element minOccurs="0" name="exitTransactionDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="transactionType" type="xs:string" />
+          <xs:element minOccurs="0" name="transactionSign" type="xs:string" />
+          <xs:element minOccurs="0" name="recoveryNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="productCode" type="xs:string" />
+          <xs:element minOccurs="0" name="productDesignation" type="xs:string" />
+          <xs:element name="quantity" type="xs:double" />
+          <xs:element name="mileage" type="xs:double" />
+          <xs:element minOccurs="0" name="transactionValueDate" type="xs:dateTime" />
+          <xs:element name="priceListVATIncl" type="xs:double" />
+          <xs:element name="unitPriceVATIncl" type="xs:double" />
+          <xs:element name="unitDiscountVATIncl" type="xs:double" />
+          <xs:element name="unitPriceVATExcl" type="xs:double" />
+          <xs:element name="unitVATRate" type="xs:double" />
+          <xs:element minOccurs="0" name="discountCode" type="xs:string" />
+          <xs:element minOccurs="0" name="transactionInformation" type="xs:string" />
+          <xs:element minOccurs="0" name="observationCode" type="xs:string" />
+          <xs:element minOccurs="0" name="finalClass" type="xs:string" />
+          <xs:element name="totalPriceVATExcl" type="xs:double" />
+          <xs:element name="totalVATRate" type="xs:double" />
+          <xs:element name="totalPriceVATIncl" type="xs:double" />
+          <xs:element minOccurs="0" name="paymentCurrencyCode" type="xs:string" />
+          <xs:element name="paymentVATExcl" type="xs:double" />
+          <xs:element name="paymentVATRate" type="xs:double" />
+          <xs:element name="paymentVATIncl" type="xs:double" />
+          <xs:element minOccurs="0" name="matchingTransaction" type="xs:string" />
+          <xs:element minOccurs="0" name="euroclass" type="xs:string" />
+          <xs:element minOccurs="0" name="partnerName" type="xs:string" />
+          <xs:element name="isInvoiced" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getPendingTransactions">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getPendingTransactionsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:transaction" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getNewTransactions">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getNewTransactionsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:transaction" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TechnicalFault" type="tns:TechnicalFault" />
+      <xs:complexType name="TechnicalFault">
+        <xs:sequence>
+          <xs:element name="codeError" nillable="true" type="xs:string" />
+          <xs:element name="messageError" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getPendingTransactionsResponse">
+    <wsdl:part name="parameters" element="tns:getPendingTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getInvoicingTransactions">
+    <wsdl:part name="parameters" element="tns:getInvoicingTransactions" />
+  </wsdl:message>
+  <wsdl:message name="TechnicalException">
+    <wsdl:part name="TechnicalException" element="tns:TechnicalFault" />
+  </wsdl:message>
+  <wsdl:message name="getPendingTransactions">
+    <wsdl:part name="parameters" element="tns:getPendingTransactions" />
+  </wsdl:message>
+  <wsdl:message name="getInvoicingTransactionsResponse">
+    <wsdl:part name="parameters" element="tns:getInvoicingTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNewTransactions">
+    <wsdl:part name="parameters" element="tns:getNewTransactions" />
+  </wsdl:message>
+  <wsdl:message name="getNewTransactionsResponse">
+    <wsdl:part name="parameters" element="tns:getNewTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="InfoService">
+    <wsdl:operation name="getInvoicingTransactions">
+      <wsdl:input name="getInvoicingTransactions" message="tns:getInvoicingTransactions" />
+      <wsdl:output name="getInvoicingTransactionsResponse" message="tns:getInvoicingTransactionsResponse" />
+      <wsdl:fault name="TechnicalException" message="tns:TechnicalException" />
+    </wsdl:operation>
+    <wsdl:operation name="getPendingTransactions">
+      <wsdl:input name="getPendingTransactions" message="tns:getPendingTransactions" />
+      <wsdl:output name="getPendingTransactionsResponse" message="tns:getPendingTransactionsResponse" />
+      <wsdl:fault name="TechnicalException" message="tns:TechnicalException" />
+    </wsdl:operation>
+    <wsdl:operation name="getNewTransactions">
+      <wsdl:input name="getNewTransactions" message="tns:getNewTransactions" />
+      <wsdl:output name="getNewTransactionsResponse" message="tns:getNewTransactionsResponse" />
+      <wsdl:fault name="TechnicalException" message="tns:TechnicalException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="infoserviceSoapBinding" type="tns:InfoService">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getInvoicingTransactions">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getInvoicingTransactions">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getInvoicingTransactionsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TechnicalException">
+        <soap12:fault use="literal" name="TechnicalException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getNewTransactions">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getNewTransactions">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getNewTransactionsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TechnicalException">
+        <soap12:fault use="literal" name="TechnicalException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPendingTransactions">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getPendingTransactions">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPendingTransactionsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TechnicalException">
+        <soap12:fault use="literal" name="TechnicalException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="infoservice">
+    <wsdl:port name="InfoServiceImplPort" binding="tns:infoserviceSoapBinding">
+      <soap12:address location="https://services-int.as24.com:8444/infoservice/services/infoservice" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
